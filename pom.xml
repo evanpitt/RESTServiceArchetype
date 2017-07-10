@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Identification -->
+    <groupId>com.pittfield.archetype.restservice</groupId>
+    <artifactId>RESTServiceArchetype</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+
+    <!-- Project Information -->
+    <name>${project.artifactId}</name>
+    <description>REST Web Service Archetype</description>
+    <inceptionYear>2017</inceptionYear>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <comments>https://choosealicense.com/licenses/mit/</comments>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Evan Pittfield</name>
+            <roles>
+                <role>Creator</role>
+            </roles>
+            <email>evanpittfield@gmail.com</email>
+        </developer>
+    </developers>
+
+    <!-- Reusable Common Properties -->
+    <properties>
+        <spring.version>4.3.9.RELEASE</spring.version>
+        <jdk.version>1.8</jdk.version>
+        <org.slf4j-version>1.7.10</org.slf4j-version>
+        <jackson.core.version>2.6.0</jackson.core.version>
+        <jackson.format.version>2.6.0</jackson.format.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Jackson XML Mapper -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.format.version}</version>
+        </dependency>
+
+        <!-- Misc dependencies -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging dependencies -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+
+        <!-- Provided dependencies -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Reporting for Unit Test Coverage -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <!-- Build Management  -->
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <outputDirectory>${project.build.outputDirectory}/site</outputDirectory>
+                        <!-- Language Support - https://maven.apache.org/plugins/localization.html  -->
+                        <locales>en</locales>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.4</version>
+                    <configuration>
+                        <reportOutputDirectory>${project.build.outputDirectory}/apidocs</reportOutputDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
