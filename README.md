@@ -17,7 +17,7 @@ Although what is contributed is not the greatest thing ever, I hope developers c
 #### Apache Maven 3.3.9
 I am using the bundled Maven included with IntelliJ IDEA.
 
-Try running "clean site javadoc:test-javadoc javadoc:javadoc package" against the project for a full package including
+Try running **mvn clean site javadoc:test-javadoc javadoc:javadoc package** against the project for a full package including
 the apidocs and the maven site documentation!
 
 ### Server Environment
