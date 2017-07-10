@@ -2,7 +2,7 @@
 
 This project contains an Archetype for a REST Service.  This is intended to be the skeleton REST service archetype but with a little more infrastructure in place to hit the ground running.
 
-This project is part of my Developer Bat Belt
+**This project is part of my Developer Bat Belt**
 
 ## What is the Developer Bat Belt?
 In short, I've noticed that throughout my life/career there are tons of designs, principles, code snippets, templates, and overall just components
@@ -14,21 +14,22 @@ Although what is contributed is not the greatest thing ever, I hope developers c
 
 
 ### Build Tools
-####Apache Maven 3.3.9
+#### Apache Maven 3.3.9
 I am using the bundled Maven included with IntelliJ IDEA.
 
 Try running "clean site javadoc:test-javadoc javadoc:javadoc package" against the project for a full package including
 the apidocs and the maven site documentation!
 
 ### Server Environment
-This Archetype is aimed at being server-agnostic, but I ran it on Wildfly:
+This Archetype is aimed at being server-agnostic, but below are the jBoss/WildFly specs used:
 
-- Product Name:      WildFly Full
-- Product Version:   10.1.0.Final
-- Profile:           COMMUNITY
-- HAL Version:       2.8.27.Final
-- Core Version:      2.8.27.Final
-
+| Attribute     | Spec          |
+| ------------- |:-------------:|
+| Server  Name  | WildFly Full  |
+| Server Version| 10.1.0.Final  |
+| Profile       | COMMUNITY     |
+| HAL Version   | 2.8.27.Final  |
+| Core Version   | 2.8.27.Final |
 
 ### Dependencies
 
@@ -47,7 +48,7 @@ This Archetype is aimed at being server-agnostic, but I ran it on Wildfly:
 
 ### Setup
 1. Make sure to add the spring.profiles.active key to your application server's environment variables with the value of "local"
-2. Build with Maven via mvn clean compile
+2. Build with Maven via **mvn clean compile**
 3. Deploy to the local application server
 4. Verify that the HTTP port on the aplpication server is configured to be 8080
-5. Consume the test endpoint [AppInfo](http://localhost:8080/RESTServiceArchetype/services/appInfo/info)
+5. Consume the test endpoint [http://localhost:8080/RESTServiceArchetype/services/appInfo/info](http://localhost:8080/RESTServiceArchetype/services/appInfo/info)
